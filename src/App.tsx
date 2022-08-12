@@ -12,10 +12,19 @@ import { TaskForm } from './apps/tasks/TaskForm'
 import Footer from './layout/Footer'
 import { Header } from './layout/header'
 
-const StyledApp = styled('div', {
+const AppWrapper = styled('div', {
   backgroundColor: '#222',
+  minHeight: '100vh',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+})
+
+const StyledApp = styled('div', {
   fontFamily: "'Quicksand', serif",
   minHeight: '100vh',
+  maxWidth: '1024px',
   display: 'flex',
   flexDirection: 'column',
 })
@@ -34,16 +43,18 @@ const App = () => {
 
   return (
     <BlockContextProvider value={blocksState}>
-      <StyledApp>
-        <Header />
-        <StyledContent>
-          <Blocks />
-          <TaskManager />
-          <TaskEditionForm />
-          <TaskForm />
-        </StyledContent>
-        <Footer />
-      </StyledApp>
+      <AppWrapper>
+        <StyledApp>
+          <Header />
+          <StyledContent>
+            <Blocks />
+            <TaskManager />
+            <TaskEditionForm />
+            <TaskForm />
+          </StyledContent>
+          <Footer />
+        </StyledApp>
+      </AppWrapper>
     </BlockContextProvider>
   )
 }
