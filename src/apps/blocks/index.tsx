@@ -4,7 +4,12 @@ import { EmptyBlocks } from '../EmptyBlocks'
 import { useBlockContext } from './blocksContext'
 import { Task } from './Task'
 
-type Props = {}
+const Wrapper = styled('div', {
+  flex: 1,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+})
 
 const StyledBlocks = styled('div', {
   display: 'grid',
@@ -15,20 +20,22 @@ const StyledBlocks = styled('div', {
   gridRowGap: '0px',
   backgroundColor: '#222',
   gap: '8px',
+  flex: 1,
   padding: '8px',
   aspectRatio: '1',
-  height: 'calc(80vh - 32px)',
 })
 
-export const Blocks = (props: Props) => {
+export const Blocks = () => {
   const { blocks } = useBlockContext()
 
   return (
-    <StyledBlocks>
-      {blocks.map(block => (
-        <Task task={block} key={block.id} />
-      ))}
-      <EmptyBlocks />
-    </StyledBlocks>
+    <Wrapper>
+      <StyledBlocks>
+        {blocks.map(block => (
+          <Task task={block} key={block.id} />
+        ))}
+        <EmptyBlocks />
+      </StyledBlocks>
+    </Wrapper>
   )
 }

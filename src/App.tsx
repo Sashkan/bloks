@@ -24,7 +24,6 @@ const AppWrapper = styled('div', {
 const StyledApp = styled('div', {
   fontFamily: "'Quicksand', serif",
   minHeight: '100vh',
-  maxWidth: '1024px',
   display: 'flex',
   flexDirection: 'column',
 })
@@ -32,6 +31,7 @@ const StyledApp = styled('div', {
 const StyledContent = styled('div', {
   display: 'flex',
   backgroundColor: '#222',
+  gap: '24px',
   color: '#fff',
   fontFamily: "'Quicksand', serif",
   flex: 1,
@@ -43,14 +43,14 @@ const App = () => {
 
   return (
     <BlockContextProvider value={blocksState}>
+      <TaskEditionForm />
+      <TaskForm />
       <AppWrapper>
         <StyledApp>
           <Header />
           <StyledContent>
             <Blocks />
             <TaskManager />
-            <TaskEditionForm />
-            <TaskForm />
           </StyledContent>
           <Footer />
         </StyledApp>

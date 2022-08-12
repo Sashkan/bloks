@@ -4,8 +4,14 @@ import { useBlockContext } from '../blocks/blocksContext'
 import { TaskState } from '../TasksState'
 import TaskViewer from '../TaskViewer'
 
+const StyledWrapper = styled('div', {
+  flex: 1,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+})
+
 const StyledTaskManager = styled('div', {
-  padding: '24px',
   flex: 1,
 })
 
@@ -13,9 +19,11 @@ const TaskManager = () => {
   const { selectedBlockId } = useBlockContext()
 
   return (
-    <StyledTaskManager>
-      {selectedBlockId ? <TaskViewer /> : <TaskState />}
-    </StyledTaskManager>
+    <StyledWrapper>
+      <StyledTaskManager>
+        {selectedBlockId ? <TaskViewer /> : <TaskState />}
+      </StyledTaskManager>
+    </StyledWrapper>
   )
 }
 

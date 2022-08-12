@@ -7,8 +7,14 @@ type Props = {}
 
 const StyledEmptyState = styled('div', {
   flex: 1,
+  overflow: 'auto',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
   h1: {
     margin: '0',
+  },
+  p: {
+    textOverflow: 'ellipsis',
   },
 })
 
@@ -38,7 +44,7 @@ export const TaskState = (props: Props) => {
         Keep it up ! Only {activeBlocks.length} task
         {activeBlocks.length > 1 && 's'} remaining
       </p>
-      <p>Make sure to drink water and stretch every once in a while</p>
+      <p>Make sure to drink water every once in a while</p>
     </StyledState>
   )
 }
