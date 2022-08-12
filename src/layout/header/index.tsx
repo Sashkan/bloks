@@ -4,6 +4,7 @@ import { MdAdd } from 'react-icons/md'
 import { useBlockContext } from '../../apps/blocks/blocksContext'
 import DayStatus from '../../apps/DayStatus'
 import { Button } from '../../components'
+import Logo from '../../assets/bloks-logo.svg'
 
 const StyledLogo = styled('div', {
   display: 'flex',
@@ -11,6 +12,7 @@ const StyledLogo = styled('div', {
   alignItems: 'center',
   fontSize: '24px',
   fontWeight: 'bold',
+  gap: '8px',
   color: '#fff',
 })
 
@@ -18,6 +20,11 @@ const StyledHeader = styled('header', {
   display: 'flex',
   justifyContent: 'space-between',
   padding: '12px 24px',
+})
+
+const StyledLogoImg = styled('img', {
+  height: '24px',
+  width: '24px',
 })
 
 const RightHeader = styled('div', {
@@ -33,7 +40,10 @@ export const Header = () => {
   return (
     <StyledHeader>
       <div>
-        <StyledLogo>bloks</StyledLogo>
+        <StyledLogo>
+          <StyledLogoImg src={Logo} alt='logo' />
+          bloks
+        </StyledLogo>
       </div>
       <RightHeader>
         <DayStatus />
