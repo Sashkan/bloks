@@ -17,7 +17,7 @@ const StyledBlocks = styled('div', {
   gap: '8px',
   padding: '8px',
   aspectRatio: '1',
-  height: 'calc(80vh - 16px)',
+  height: 'calc(80vh - 32px)',
 })
 
 export const Blocks = (props: Props) => {

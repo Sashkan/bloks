@@ -5,10 +5,18 @@ import { useBlockContext } from '../blocks/blocksContext'
 
 const StyledDaily = styled('div', {
   display: 'flex',
+  gap: '24px',
+  color: '#fff',
+  alignItems: 'center',
+})
+
+const StyledDailyWrap = styled('div', {
+  display: 'flex',
   gap: '8px',
   color: '#fff',
   alignItems: 'center',
 })
+
 const StyledLabel = styled('div', {
   display: 'flex',
   gap: '4px',
@@ -25,23 +33,31 @@ const DayStatus = () => {
     0
   )
 
-  const donePercentage = Math.round((totalDoneWeight / totalWeight) * 100)
+  let donePercentage = Math.round((totalDoneWeight / totalWeight) * 100)
+
+  if (blocks.length === 0) {
+    donePercentage = 0
+  }
 
   return (
     <StyledDaily>
-      <StyledLabel>Productivity</StyledLabel>
-      <Progress value={donePercentage}>
-        <ProgressIndicator
-          style={{ transform: `translateX(-${100 - donePercentage}%)` }}
-        />
-      </Progress>
+      <StyledDailyWrap>
+        <StyledLabel>Productivity</StyledLabel>
+        <Progress value={donePercentage}>
+          <ProgressIndicator
+            style={{ transform: `translateX(-${100 - donePercentage}%)` }}
+          />
+        </Progress>
+      </StyledDailyWrap>
 
-      <StyledLabel>Day management</StyledLabel>
-      <Progress value={totalWeight}>
-        <ProgressIndicator
-          style={{ transform: `translateX(-${100 - totalWeight}%)` }}
-        />
-      </Progress>
+      <StyledDailyWrap>
+        <StyledLabel>Time usage</StyledLabel>
+        <Progress value={totalWeight}>
+          <ProgressIndicator
+            style={{ transform: `translateX(-${100 - totalWeight}%)` }}
+          />
+        </Progress>
+      </StyledDailyWrap>
     </StyledDaily>
   )
 }

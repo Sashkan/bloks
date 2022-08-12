@@ -2,7 +2,7 @@ import { styled } from '@stitches/react'
 import React from 'react'
 import { BsFillSuitHeartFill } from 'react-icons/bs'
 
-const StyledHeader = styled('header', {
+const StyledFooter = styled('footer', {
   display: 'flex',
   justifyContent: 'space-between',
   padding: '12px 24px',
@@ -14,15 +14,26 @@ const StyledLove = styled('header', {
   color: '#fff',
 })
 
+const StyledLink = styled('a', {
+  color: '#fff',
+})
+
 const Footer = () => {
   return (
-    <StyledHeader>
+    <StyledFooter>
       <StyledLove>
         <p>
-          made with <BsFillSuitHeartFill color='#ef0000' /> by sashkan
+          made with <BsFillSuitHeartFill color='#ef0000' /> by{' '}
+          <StyledLink
+            href='https://github.com/Sashkan'
+            target='_blank'
+            rel='noreferrer'
+          >
+            sashkan
+          </StyledLink>
         </p>
       </StyledLove>
-      <div>
+      <StyledLove>
         <a href='https://ko-fi.com/N4N8ECTWW' target='_blank' rel='noreferrer'>
           <img
             height='36'
@@ -34,8 +45,8 @@ const Footer = () => {
             alt='Buy Me a Coffee at ko-fi.com'
           />
         </a>
-      </div>
-    </StyledHeader>
+      </StyledLove>
+    </StyledFooter>
   )
 }
 

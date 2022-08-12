@@ -33,7 +33,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       <div>
-        <StyledLogo>blok</StyledLogo>
+        <StyledLogo>bloks</StyledLogo>
       </div>
       <RightHeader>
         <DayStatus />

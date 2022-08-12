@@ -46,10 +46,12 @@ export const useBlockContext = () => {
 export const BlockContextProvider = BlockContext.Provider
 
 export const useBlocksState = () => {
-  const init = localStorage.getItem('postasks')
-  const test = init ? JSON.parse(init) : []
+  const storedTasks = localStorage.getItem('postasks')
+  const parsedTasks = storedTasks ? JSON.parse(storedTasks) : []
 
-  const [blocks, setBlocks] = useState<Block[]>(test)
+  console.log(parsedTasks)
+
+  const [blocks, setBlocks] = useState<Block[]>(parsedTasks || [])
   const [editingBlockId, setEditingBlockId] = useState<string | null>(null)
   const [addedBlocks, setAddedBlocks] = useState(0)
   const [selectedBlockId, setSelectedBlockId] = useState<string | null>(null)

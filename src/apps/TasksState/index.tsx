@@ -1,6 +1,7 @@
 import { styled } from '@stitches/react'
 import React from 'react'
 import { useBlockContext } from '../blocks/blocksContext'
+import { EmptyState } from '../EmptyState'
 
 type Props = {}
 
@@ -23,11 +24,7 @@ export const TaskState = (props: Props) => {
   const doneBlocks = blocks.filter(block => block.status === 'done')
 
   if (blocks.length === 0) {
-    return (
-      <StyledEmptyState>
-        <h1>No tasks yet</h1>
-      </StyledEmptyState>
-    )
+    return <EmptyState />
   }
 
   return (

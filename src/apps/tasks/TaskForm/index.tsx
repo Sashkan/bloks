@@ -2,7 +2,7 @@ import { green, violet, whiteA } from '@radix-ui/colors'
 import { styled } from '@stitches/react'
 import React, { useEffect, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { MdClose } from 'react-icons/md'
+import { MdClose, MdInfo } from 'react-icons/md'
 
 import {
   Dialog,
@@ -12,6 +12,7 @@ import {
   DialogTitle,
 } from '../../../components/Dialog'
 import { Separator } from '../../../components/Separator'
+import { Tooltip } from '../../../components/Tooltip'
 import { useBlockContext } from '../../blocks/blocksContext'
 
 type BlockInput = {
@@ -36,6 +37,12 @@ const IconButton = styled('button', {
 
   '&:hover': { backgroundColor: violet.violet4 },
   '&:focus': { boxShadow: `0 0 0 2px ${violet.violet7}` },
+})
+
+const CenteredFlex = styled('div', {
+  display: 'flex',
+  alignItems: 'flex-end',
+  gap: '4px',
 })
 
 const StyledWrapper = styled('div', {
@@ -150,9 +157,7 @@ export const TaskForm = () => {
         onInteractOutside={() => setIsTaskFormOpen(false)}
       >
         <DialogTitle>Add a task</DialogTitle>
-        <DialogDescription>
-          Make changes to your profile here. Click save when you're done.
-        </DialogDescription>
+        <DialogDescription>What should you do today ?</DialogDescription>
         <StyledWrapper>
           <StyledTaskForm onSubmit={handleSubmit(onSubmit)}>
             {/* register your input into the hook by invoking the "register" function */}
@@ -172,7 +177,14 @@ export const TaskForm = () => {
               {...register('content')}
             />
 
-            <label htmlFor='complexity'>Complexity</label>
+            <CenteredFlex>
+              <label htmlFor='complexity'>Complexity</label>
+              <Tooltip message='How much time will it take ? each point stands for 10 minutes'>
+                <CenteredFlex css={{ alignItems: 'flex-end' }}>
+                  <MdInfo size={14} />
+                </CenteredFlex>
+              </Tooltip>
+            </CenteredFlex>
             <StyledTaskFormInput
               id='complexity'
               {...register('weight', { required: true, valueAsNumber: true })}
