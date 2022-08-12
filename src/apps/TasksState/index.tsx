@@ -34,7 +34,10 @@ export const TaskState = (props: Props) => {
         You've completed {doneBlocks.length} out of {blocks.length} tasks today
       </p>
       <p>Your day is {totalWeight}% full</p>
-      <p>Keep it up ! Only {activeBlocks.length} tasks remaining</p>
+      <p>
+        Keep it up ! Only {activeBlocks.length} task
+        {activeBlocks.length > 1 && 's'} remaining
+      </p>
       <p>Make sure to drink water and stretch every once in a while</p>
     </StyledState>
   )
