@@ -20,7 +20,7 @@ const StyledBlocks = styled('div', {
   gridRowGap: '0px',
   backgroundColor: '#222',
   gap: '8px',
-  flex: 1,
+  flex: 2,
   padding: '8px',
   aspectRatio: '1',
 })

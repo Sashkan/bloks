@@ -17,6 +17,9 @@ const StyledBlock = styled('div', {
   gridRow: 'span 1',
   aspectRatio: '1',
   borderRadius: '4px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 })
 
 export const Block = ({ color, message }: Props) => {
