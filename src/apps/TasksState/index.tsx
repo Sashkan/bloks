@@ -18,9 +18,7 @@ const StyledEmptyState = styled('div', {
   },
 })
 
-const StyledState = styled(StyledEmptyState, {
-  flex: 1,
-})
+const StyledState = styled(StyledEmptyState, {})
 
 export const TaskState = (props: Props) => {
   const { blocks } = useBlockContext()

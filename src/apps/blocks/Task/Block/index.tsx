@@ -45,7 +45,6 @@ export const AddTaskBlock = () => {
           backgroundColor: '#fff',
           cursor: 'pointer',
           color: '#000',
-          fontSize: '1.5rem',
           '&:hover': {
             backgroundColor: '#eee',
           },

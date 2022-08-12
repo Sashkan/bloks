@@ -31,6 +31,11 @@ const StyledTaskViewerHeader = styled('div', {
   alignItems: 'center',
 })
 
+const StyledTaskViewerFooter = styled(StyledTaskViewerHeader, {
+  justifyContent: 'flex-start',
+  gap: '8px',
+})
+
 const StyledCloseButton = styled('button', {
   fontSize: '16px',
   border: 'none',
@@ -103,7 +108,7 @@ const TaskViewer = () => {
       ) : (
         <StyledContent>No description was provided for this task</StyledContent>
       )}
-      <StyledTaskViewerHeader>
+      <StyledTaskViewerFooter>
         {task.status === 'done' ? (
           <Button variant='grey' onClick={() => updateStatus()}>
             Mark as active
@@ -116,7 +121,7 @@ const TaskViewer = () => {
         <Button variant='red' onClick={() => removeBlock(task.id)}>
           Cancel
         </Button>
-      </StyledTaskViewerHeader>
+      </StyledTaskViewerFooter>
     </StyledTaskViewer>
   )
 }

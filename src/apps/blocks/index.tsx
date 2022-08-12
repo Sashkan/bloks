@@ -19,9 +19,10 @@ const StyledBlocks = styled('div', {
   gridAutoFlow: 'row dense',
   gridRowGap: '0px',
   backgroundColor: '#222',
+  height: 'calc(100vh - 208px)',
   gap: '8px',
-  flex: 2,
   padding: '8px',
+  minHeight: '400px',
   aspectRatio: '1',
 })
 

@@ -8,11 +8,11 @@ const StyledWrapper = styled('div', {
   flex: 1,
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'flex-start',
 })
 
 const StyledTaskManager = styled('div', {
-  flex: 1,
+  width: '50%',
 })
 
 const TaskManager = () => {

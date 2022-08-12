@@ -17,14 +17,16 @@ const AppWrapper = styled('div', {
   minHeight: '100vh',
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   justifyContent: 'center',
 })
 
 const StyledApp = styled('div', {
   fontFamily: "'Quicksand', serif",
-  minHeight: '100vh',
   display: 'flex',
+  flex: 1,
+  width: '100%',
+  minHeight: '600px',
   flexDirection: 'column',
 })
 
@@ -36,6 +38,7 @@ const StyledContent = styled('div', {
   fontFamily: "'Quicksand', serif",
   flex: 1,
   padding: '12px',
+  maxHeight: 'calc(100vh - 48px)',
 })
 
 const App = () => {
