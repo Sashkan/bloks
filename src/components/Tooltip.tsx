@@ -1,6 +1,7 @@
 import React from 'react'
 import { styled, keyframes } from '@stitches/react'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
+import { theme } from '../theme'
 
 const slideUpAndFade = keyframes({
   '0%': { opacity: 0, transform: 'translateY(2px)' },
@@ -27,8 +28,8 @@ const StyledContent = styled(TooltipPrimitive.Content, {
   padding: '10px 15px',
   fontSize: 15,
   lineHeight: 1,
-  color: '#fff',
-  backgroundColor: '#000',
+  color: theme.colors.light,
+  backgroundColor: theme.colors.dark,
   boxShadow:
     'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
   userSelect: 'none',

@@ -1,11 +1,12 @@
 import { styled } from '@stitches/react'
-import { green } from '@radix-ui/colors'
 import * as ProgressPrimitive from '@radix-ui/react-progress'
+import { theme } from '../theme'
 
 const StyledProgress = styled(ProgressPrimitive.Root, {
   position: 'relative',
+  marginTop: '4px',
   overflow: 'hidden',
-  background: green.green12,
+  background: theme.colors.light,
   borderRadius: '99999px',
   width: 200,
   height: 10,
@@ -16,7 +17,7 @@ const StyledProgress = styled(ProgressPrimitive.Root, {
 })
 
 const StyledIndicator = styled(ProgressPrimitive.Indicator, {
-  backgroundColor: green.green10,
+  backgroundColor: theme.colors.dark,
   width: '100%',
   height: '100%',
   transition: 'transform 660ms cubic-bezier(0.65, 0, 0.35, 1)',

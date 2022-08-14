@@ -11,9 +11,10 @@ import TaskManager from './apps/taskManager'
 import { TaskForm } from './apps/tasks/TaskForm'
 import Footer from './layout/Footer'
 import { Header } from './layout/header'
+import { theme } from './theme'
 
 const AppWrapper = styled('div', {
-  backgroundColor: '#222',
+  backgroundColor: theme.colors.light,
   minHeight: '100vh',
   display: 'flex',
   flexDirection: 'column',
@@ -32,9 +33,8 @@ const StyledApp = styled('div', {
 
 const StyledContent = styled('div', {
   display: 'flex',
-  backgroundColor: '#222',
   gap: '24px',
-  color: '#fff',
+  color: theme.colors.dark,
   fontFamily: "'Quicksand', serif",
   flex: 1,
   padding: '12px',

@@ -1,19 +1,20 @@
 import { styled } from '@stitches/react'
 import React from 'react'
 import { Progress, ProgressIndicator } from '../../components/Progress'
+import { theme } from '../../theme'
 import { useBlockContext } from '../blocks/blocksContext'
 
 const StyledDaily = styled('div', {
   display: 'flex',
   gap: '24px',
-  color: '#fff',
+  color: theme.colors.light,
   alignItems: 'center',
 })
 
 const StyledDailyWrap = styled('div', {
   display: 'flex',
   gap: '8px',
-  color: '#fff',
+  color: theme.colors.light,
   alignItems: 'center',
 })
 

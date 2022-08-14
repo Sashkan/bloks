@@ -27,7 +27,6 @@ const StyledTask = styled('div', {
     opacity: 1,
     '.block': {
       opacity: '1',
-      boxShadow: '0 0 0 2px #00000077',
     },
   },
   variants: {

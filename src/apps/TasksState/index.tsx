@@ -34,15 +34,47 @@ export const TaskState = (props: Props) => {
   return (
     <StyledState>
       <h1>Hi there</h1>
-      <p>
-        You've completed {doneBlocks.length} out of {blocks.length} tasks today
-      </p>
-      <p>Your day is {totalWeight}% full</p>
-      <p>
-        Keep it up ! Only {activeBlocks.length} task
-        {activeBlocks.length > 1 && 's'} remaining
-      </p>
+      <Completion done={doneBlocks.length} all={blocks.length} />
+      <Fullfilment totalWeight={totalWeight} />
+      <TaskCompletion activeBlocks={activeBlocks.length} />
       <p>Make sure to drink water every once in a while</p>
     </StyledState>
+  )
+}
+
+const Completion = ({ done, all }: { done: number; all: number }) => {
+  if (done === all) {
+    return <p>You've completed all of your tasks today !!</p>
+  }
+
+  return (
+    <p>
+      You've completed {done} out of {all} tasks today
+    </p>
+  )
+}
+
+const Fullfilment = ({ totalWeight }: { totalWeight: number }) => {
+  if (totalWeight === 0) {
+    return <p>You haven't planned any tasks today</p>
+  }
+
+  if (totalWeight === 100) {
+    return <p>Your day is fully booked!</p>
+  }
+
+  return <p>Your day is {totalWeight}% full</p>
+}
+
+const TaskCompletion = ({ activeBlocks }: { activeBlocks: number }) => {
+  if (activeBlocks === 0) {
+    return null
+  }
+
+  return (
+    <p>
+      Keep it up ! Only {activeBlocks} task
+      {activeBlocks > 1 && 's'} remaining
+    </p>
   )
 }

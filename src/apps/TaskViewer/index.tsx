@@ -2,6 +2,7 @@ import { keyframes, styled } from '@stitches/react'
 import React, { useCallback } from 'react'
 import { MdEdit } from 'react-icons/md'
 import { Button } from '../../components'
+import { theme } from '../../theme'
 import { useBlockContext } from '../blocks/blocksContext'
 
 const contentShow = keyframes({
@@ -41,14 +42,14 @@ const StyledCloseButton = styled('button', {
   border: 'none',
   backgroundColor: 'transparent',
   cursor: 'pointer',
-  color: '#ddd',
+  color: `${theme.colors.dark}55`,
   fontFamily: "'Quicksand', serif",
   borderRadius: '4px',
   fontWeight: 'bold',
   padding: '0',
   outline: 'none',
   '&:hover': {
-    color: '#fff',
+    color: `${theme.colors.dark}`,
   },
 })
 
@@ -110,15 +111,21 @@ const TaskViewer = () => {
       )}
       <StyledTaskViewerFooter>
         {task.status === 'done' ? (
-          <Button variant='grey' onClick={() => updateStatus()}>
+          <Button variant='primary' onClick={() => updateStatus()}>
             Mark as active
           </Button>
         ) : (
-          <Button variant='green' onClick={() => updateStatus()}>
+          <Button
+            variant='primary'
+            onClick={() => {
+              updateStatus()
+              setSelectedBlockId(null)
+            }}
+          >
             Mark as done
           </Button>
         )}
-        <Button variant='red' onClick={() => removeBlock(task.id)}>
+        <Button variant='discourage' onClick={() => removeBlock(task.id)}>
           Cancel
         </Button>
       </StyledTaskViewerFooter>

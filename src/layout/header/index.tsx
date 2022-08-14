@@ -5,6 +5,7 @@ import { useBlockContext } from '../../apps/blocks/blocksContext'
 import DayStatus from '../../apps/DayStatus'
 import { Button } from '../../components'
 import Logo from '../../assets/bloks-logo.svg'
+import { theme } from '../../theme'
 
 const StyledLogo = styled('div', {
   display: 'flex',
@@ -13,11 +14,12 @@ const StyledLogo = styled('div', {
   fontSize: '24px',
   fontWeight: 'bold',
   gap: '8px',
-  color: '#fff',
 })
 
 const StyledHeader = styled('header', {
   display: 'flex',
+  color: theme.colors.light,
+  backgroundColor: theme.colors.brand,
   justifyContent: 'space-between',
   padding: '12px 24px',
 })
@@ -48,7 +50,7 @@ export const Header = () => {
       <RightHeader>
         <DayStatus />
 
-        <Button variant='green' onClick={() => setIsTaskFormOpen(true)}>
+        <Button variant='primary' onClick={() => setIsTaskFormOpen(true)}>
           <MdAdd /> Add task
         </Button>
       </RightHeader>

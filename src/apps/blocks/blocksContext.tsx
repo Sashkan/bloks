@@ -79,8 +79,6 @@ export const useBlocksState = () => {
   }
 
   const editBlock = (block: Block) => {
-    console.log('editBlock', block.status)
-
     setBlocks(
       blocks.map(b => {
         return b.id === block.id ? block : b

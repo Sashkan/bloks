@@ -1,9 +1,12 @@
 import { styled } from '@stitches/react'
 import React from 'react'
 import { BsFillSuitHeartFill } from 'react-icons/bs'
+import { theme } from '../theme'
 
 const StyledFooter = styled('footer', {
   display: 'flex',
+  color: theme.colors.light,
+  backgroundColor: theme.colors.brand,
   justifyContent: 'space-between',
   padding: '12px 24px',
 })
@@ -11,11 +14,11 @@ const StyledFooter = styled('footer', {
 const StyledLove = styled('header', {
   display: 'flex',
   alignItems: 'center',
-  color: '#fff',
+  color: theme.colors.light,
 })
 
 const StyledLink = styled('a', {
-  color: '#fff',
+  color: theme.colors.light,
 })
 
 const Footer = () => {

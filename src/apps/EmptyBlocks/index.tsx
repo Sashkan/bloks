@@ -58,7 +58,7 @@ export const EmptyBlocks = (props: Props) => {
           <Block
             key={i}
             weight={1}
-            color='#111'
+            color='#fff'
             taskId='empty'
             message='free time'
           />

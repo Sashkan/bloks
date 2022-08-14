@@ -2,6 +2,7 @@ import { styled } from '@stitches/react'
 import React from 'react'
 import { MdAdd } from 'react-icons/md'
 import { Tooltip } from '../../../../components/Tooltip'
+import { theme } from '../../../../theme'
 import { useBlockContext } from '../../blocksContext'
 
 type Props = {
@@ -20,6 +21,7 @@ const StyledBlock = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  transition: '0.2s',
 })
 
 export const Block = ({ color, message }: Props) => {
@@ -42,11 +44,12 @@ export const AddTaskBlock = () => {
       <StyledBlock
         onClick={() => setIsTaskFormOpen(true)}
         css={{
-          backgroundColor: '#fff',
+          backgroundColor: theme.colors.light,
           cursor: 'pointer',
           color: '#000',
           '&:hover': {
-            backgroundColor: '#eee',
+            backgroundColor: theme.colors.brand,
+            color: theme.colors.light,
           },
         }}
       >

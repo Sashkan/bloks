@@ -1,5 +1,6 @@
 import { styled } from '@stitches/react'
 import React from 'react'
+import { theme } from '../../theme'
 import { EmptyBlocks } from '../EmptyBlocks'
 import { useBlockContext } from './blocksContext'
 import { Task } from './Task'
@@ -18,7 +19,8 @@ const StyledBlocks = styled('div', {
   gridColumnGap: '0px',
   gridAutoFlow: 'row dense',
   gridRowGap: '0px',
-  backgroundColor: '#222',
+  backgroundColor: theme.colors.mid,
+  borderRadius: '4px',
   height: 'calc(100vh - 208px)',
   gap: '8px',
   padding: '8px',

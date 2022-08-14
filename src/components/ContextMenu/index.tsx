@@ -2,10 +2,12 @@ import React from 'react'
 import { styled } from '@stitches/react'
 import { violet, mauve, whiteA } from '@radix-ui/colors'
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
+import { theme } from '../../theme'
 
 const contentStyles = {
   minWidth: 220,
-  backgroundColor: '#222',
+  backgroundColor: theme.colors.mid,
+  color: theme.colors.dark,
   borderRadius: 6,
   overflow: 'hidden',
   padding: 5,
@@ -40,11 +42,11 @@ const itemStyles = {
   fontSize: 13,
   fontFamily: "'Quicksand', serif",
   lineHeight: 1,
-  color: '#ddd',
   borderRadius: 3,
   cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
+  color: theme.colors.dark,
   height: 25,
   padding: '0 5px',
   position: 'relative',
@@ -57,7 +59,7 @@ const itemStyles = {
 
   '&[data-highlighted]': {
     color: whiteA.whiteA12,
-    backgroundColor: '#444',
+    backgroundColor: theme.colors.brand,
   },
 }
 

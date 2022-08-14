@@ -12,6 +12,7 @@ import {
   DialogTitle,
 } from '../../components/Dialog'
 import { Separator } from '../../components/Separator'
+import { theme } from '../../theme'
 import { useBlockContext } from '../blocks/blocksContext'
 
 type BlockInput = {
@@ -58,8 +59,8 @@ const StyledTaskForm = styled('form', {
 const StyledTaskFormInput = styled('input', {
   fontSize: '16px',
   border: 'none',
-  backgroundColor: '#000',
-  color: '#fff',
+  backgroundColor: theme.colors.mid,
+  color: theme.colors.dark,
   fontFamily: "'Quicksand', serif",
   borderRadius: '4px',
   fontWeight: 'bold',
@@ -70,8 +71,8 @@ const StyledTaskFormInput = styled('input', {
 const StyledTextarea = styled('textarea', {
   fontSize: '16px',
   border: 'none',
-  backgroundColor: '#000',
-  color: '#fff',
+  backgroundColor: theme.colors.mid,
+  color: theme.colors.dark,
   fontFamily: "'Quicksand', serif",
   borderRadius: '4px',
   fontWeight: 'bold',
@@ -92,10 +93,10 @@ const StyledSubmitButton = styled('input', {
   lineHeight: 1,
   fontWeight: 500,
   height: 35,
-  backgroundColor: green.green11,
+  backgroundColor: theme.colors.brand,
   color: whiteA.whiteA12,
   '&:hover': { backgroundColor: green.green10 },
-  '&:focus': { boxShadow: `0 0 0 2px ${green.green7}` },
+  '&:focus': { boxShadow: `0 0 0 2px ${theme.colors.brand}` },
 })
 
 export const TaskEditionForm = () => {

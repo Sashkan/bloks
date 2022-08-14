@@ -2,6 +2,7 @@ import React from 'react'
 import { styled, keyframes } from '@stitches/react'
 import { blackA, mauve } from '@radix-ui/colors'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
+import { theme } from '../../theme'
 
 const overlayShow = keyframes({
   '0%': { opacity: 0 },
@@ -23,8 +24,8 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, {
 })
 
 const StyledContent = styled(DialogPrimitive.Content, {
-  backgroundColor: '#222',
-  color: '#fff',
+  backgroundColor: theme.colors.light,
+  color: theme.colors.dark,
   borderRadius: 6,
   boxShadow:
     'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',

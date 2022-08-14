@@ -1,16 +1,16 @@
-import { green } from '@radix-ui/colors'
 import { styled } from '@stitches/react'
 import React from 'react'
 import { MdArrowBack } from 'react-icons/md'
+import { theme } from '../../theme'
 import { useBlockContext } from '../blocks/blocksContext'
 
 const StyledEmptyState = styled('div', {})
 
 const StyledCTA = styled('span', {
-  color: green.green10,
+  color: theme.colors.brand,
   cursor: 'pointer',
   '&:hover': {
-    color: green.green7,
+    color: `${theme.colors.light}DD`,
   },
 })
 
