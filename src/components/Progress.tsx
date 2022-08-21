@@ -6,7 +6,7 @@ const StyledProgress = styled(ProgressPrimitive.Root, {
   position: 'relative',
   marginTop: '4px',
   overflow: 'hidden',
-  background: theme.colors.light,
+  background: theme.colors.dark,
   borderRadius: '99999px',
   width: 200,
   height: 10,
@@ -17,7 +17,7 @@ const StyledProgress = styled(ProgressPrimitive.Root, {
 })
 
 const StyledIndicator = styled(ProgressPrimitive.Indicator, {
-  backgroundColor: theme.colors.dark,
+  backgroundColor: theme.colors.light,
   width: '100%',
   height: '100%',
   transition: 'transform 660ms cubic-bezier(0.65, 0, 0.35, 1)',

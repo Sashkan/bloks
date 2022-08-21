@@ -56,7 +56,7 @@ const Completion = ({ done, all }: { done: number; all: number }) => {
 
 const Fullfilment = ({ totalWeight }: { totalWeight: number }) => {
   if (totalWeight === 0) {
-    return <p>You haven't planned any tasks today</p>
+    return <p>You haven't planned any task for today</p>
   }
 
   if (totalWeight === 100) {

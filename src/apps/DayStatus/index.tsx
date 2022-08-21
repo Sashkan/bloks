@@ -13,7 +13,7 @@ const StyledDaily = styled('div', {
 
 const StyledDailyWrap = styled('div', {
   display: 'flex',
-  gap: '8px',
+  gap: '12px',
   color: theme.colors.light,
   alignItems: 'center',
 })
