@@ -1,6 +1,5 @@
 import { styled } from '@stitches/react'
 import React from 'react'
-import { MdArrowBack } from 'react-icons/md'
 import { theme } from '../../theme'
 import { useBlockContext } from '../blocks/blocksContext'
 
@@ -22,26 +21,11 @@ const StyledLine = styled('div', {
 
 export const EmptyState = () => {
   const { setIsTaskFormOpen } = useBlockContext()
-  // const store = localStorage.getItem('postasks')
-
-  // if (store) {
-  //   return (
-  //     <StyledEmptyState>
-  //       <h1>Hi</h1>
-  //       <p>You don't have anything planned for today</p>
-  //       <StyledCTA onClick={() => setIsTaskFormOpen(true)}>
-  //         Create your first task
-  //       </StyledCTA>
-  //     </StyledEmptyState>
-  //   )
-  // }
 
   return (
     <StyledEmptyState>
       <h1>Hi</h1>
-      <StyledLine>
-        <MdArrowBack /> This is your day
-      </StyledLine>
+      <StyledLine>This is your day</StyledLine>
       <p>Each block represents 10 minutes, and there are 100 blocks.</p>
       <p>That's about 16 hours</p>
       <p>Bloks help you make the most out of your day</p>

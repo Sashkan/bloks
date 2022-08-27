@@ -1,5 +1,6 @@
 import { styled } from '@stitches/react'
 import React from 'react'
+import { Button } from '../../components'
 import { useBlockContext } from '../blocks/blocksContext'
 import { EmptyState } from '../EmptyState'
 
@@ -21,7 +22,7 @@ const StyledEmptyState = styled('div', {
 const StyledState = styled(StyledEmptyState, {})
 
 export const TaskState = (props: Props) => {
-  const { blocks } = useBlockContext()
+  const { blocks, clearAllTasks } = useBlockContext()
 
   const totalWeight = blocks.reduce((acc, block) => acc + block.weight, 0)
   const activeBlocks = blocks.filter(block => block.status === 'active')
@@ -38,6 +39,9 @@ export const TaskState = (props: Props) => {
       <Fullfilment totalWeight={totalWeight} />
       <TaskCompletion activeBlocks={activeBlocks.length} />
       <p>Make sure to drink water every once in a while</p>
+      <Button variant='primary' onClick={() => clearAllTasks()}>
+        Clear all tasks
+      </Button>
     </StyledState>
   )
 }

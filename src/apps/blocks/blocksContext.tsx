@@ -15,6 +15,7 @@ interface BlockContextInterface {
   setEditingBlockId: (blockId: string | null) => void
   isTaskFormOpen: boolean
   setIsTaskFormOpen: (isTaskFormOpen: boolean) => void
+  clearAllTasks: () => void
 }
 
 const BlockContext = createContext<BlockContextInterface>({
@@ -31,6 +32,7 @@ const BlockContext = createContext<BlockContextInterface>({
   setEditingBlockId: () => {},
   isTaskFormOpen: false,
   setIsTaskFormOpen: () => {},
+  clearAllTasks: () => {},
 })
 
 export const useBlockContext = () => {
@@ -48,8 +50,6 @@ export const BlockContextProvider = BlockContext.Provider
 export const useBlocksState = () => {
   const storedTasks = localStorage.getItem('postasks')
   const parsedTasks = storedTasks ? JSON.parse(storedTasks) : []
-
-  console.log(parsedTasks)
 
   const [blocks, setBlocks] = useState<Block[]>(parsedTasks || [])
   const [editingBlockId, setEditingBlockId] = useState<string | null>(null)
@@ -78,6 +78,12 @@ export const useBlocksState = () => {
     }
   }
 
+  const clearAllTasks = () => {
+    setBlocks([])
+    setSelectedBlockId(null)
+    setEditingBlockId(null)
+  }
+
   const editBlock = (block: Block) => {
     setBlocks(
       blocks.map(b => {
@@ -101,5 +107,6 @@ export const useBlocksState = () => {
     setSelectedBlockId,
     isTaskFormOpen,
     setIsTaskFormOpen,
+    clearAllTasks,
   }
 }
